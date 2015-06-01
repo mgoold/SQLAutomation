@@ -1,5 +1,5 @@
 # SQLAutomation
-Simple automation routine for sql text (not SQL alchemy ORM language).  Let your team members easily process their existing SQL text w/out learning SQLAlchemy ORM.
+Simple automation routine for sql text.  Let your team members easily process their existing SQL text w/out learning SQLAlchemy ORM.
 
 Steps to use:
 
