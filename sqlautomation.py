@@ -17,11 +17,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-fileset=json.loads(open('/home/mark/Documents/ReportAutomation/filelist.json').read())
+fileset=json.loads(open('/pathtojsonfile/filelist.json').read())
 s
 # make db connection
 # this is the string format you need:
-db = create_engine("postgresql+psycopg2://YOURUSERNAME:YOURPASSWORD@10.211.26.100:5439/ancestry")
+db = create_engine("postgresql+psycopg2://YOURUSERNAME:YOURPASSWORD@ipaddress:portnumber/server")
 db_con=db.connect()
 
 print "connection successful"
