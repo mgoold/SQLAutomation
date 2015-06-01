@@ -52,6 +52,24 @@ The start and end dates are dates you plug into the sql script using the same ke
 
 The "files" key returns a list of sql text you want to run. You could run a list of files if you wanted to. If you want to update (add data to) the file, use the "update" keyword. If you want to run the script just one time with fixed dates, use the keyword "sub" instead of "update".
 
+{
+"howtomakethisfile": "http://devilya01/foswiki/DataAnalyticsYou/UsingSQLAutomationScript",
+"description":"engagement dashboard daily update",
+"emailto":"mgoold@ancestry.com",
+"emailfrom":"mgoold@ancestry.com",
+"dateset":
+{"startdate1":"2013-01-01",
+"enddate1":"2013-01-02",
+"startdate2":"2013-01-01",
+"enddate2":"2013-01-02"
+},
+"checkscript":"select max(dayid) from a.markengexeccombined",
+"files":
+{
+"1":["/home/mark/Documents/ReportAutomation/execengagementautomation.txt","update","drop all tables"]
+}
+}
+
 The checkscript is a simple sqlstatement that you feed python; it should return the maximum date from the table you want to update. For example, suppose you have a column "dayid" in your table by which you break out your data. You know that unless today's date is at least one day greater than the max "dayid" value, there will be no point in updating your table. In that case, your checkscript should simply be "select max(dayid) from <YOURTABLENAME>". The single time data point resulting from this script will be evaluated by python to see if enough time has elapsed to make it worth running an update.
 4. Set up a folder on the ubuntu box. It will need to have 3 things:
 
