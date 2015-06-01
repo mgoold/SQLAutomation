@@ -3,16 +3,15 @@ Simple automation routine for sql text (not SQL alchemy ORM language).  Let your
 
 Steps to use:
 
- 1. Prep your sql script for automation. To do this, take any sql script, and:
+1. Prep your sql script for automation. To do this, take any sql script, and:
 
-    enter "go" between each block of code you want to run. "go" should be after each block you want to run, but extra use of this word won't hurt anything.
-    you can have comments between lines, or after a line of script on the same line. The comment MUST be indicated by a # of // sign.
-    for each "from" date in your script, substitute the word "lastdate". for each "to" date in your script, substitute the word "updatedate". This is how python will know where to change your daily dynamic date parameters when it does the update each day.
-        if you just one to run a one-time update with static values, use "startdate1" for from dates, and "enddate1" for enddates.
-        Note that this implies that "startdate", "enddate", "startdate1", "enddate1" can't be used for anything else in your sql script...treat them like reserved words. 
-    all of your drop table statements must be done as "dropifs", e.g. select dropif('a', 'markextempfti').
-        this is an example of the fact that your script must generate NO errors when run in ADS. In ADS, there are statements like "drop table" that will not kill the your job if they throw an error, but ANY error thrown by the sql script will cause the python script to quit. 
-    save the sql file as a .txt file. 
+a. enter "go" between each block of code you want to run. "go" should be after each block you want to run, but extra use of this word won't hurt anything.
+b.you can have comments between lines, or after a line of script on the same line. The comment MUST be indicated by a # of // c.for each "from" date in your script, substitute the word "lastdate". for each "to" date in your script, substitute the word "updatedate". This is how python will know where to change your daily dynamic date parameters when it does the update each day.
+  i. if you just one to run a one-time update with static values, use "startdate1" for from dates, and "enddate1" for enddates.
+  ii. Note that this implies that "startdate", "enddate", "startdate1", "enddate1" can't be used for anything else in your sql    script...treat them like reserved words. 
+d. all of your drop table statements must be done as "dropifs", e.g. select dropif('a', 'markextempfti').
+e.this is an example of the fact that your script must generate NO errors when it runs as normal sql. 
+f. save the sql file as a .txt file. 
 
 --that's it! any page of sql script formatted per these specs should run. The only thing I've found that didn't work so far (but works in regular ADS script runner) was a nested select of inner selects stacked with UNIONS. I'm not sure whether it was the sql itself or some python quirk.
 2. prep your python script (insert your connectionstring):
