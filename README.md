@@ -28,6 +28,7 @@ the json file (see attached below) is config file, and you put into it all the p
 
 They are as follows:
 
+{
 "howtomakethisfile": "https://github.com/mgoold/SQLAutomation/edit/master/README.md",
 "description":"a description of what this file is for, e.g. update executive summary",
 "emailto":"the email you want to send alerts to",
