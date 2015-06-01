@@ -1,0 +1,17 @@
+{
+"howtomakethisfile": "http://pathtoreadme",
+"description":"engagement dashboard daily update",
+"emailto":"youremailaddress",
+"emailfrom":"recipientemailaddress",
+"dateset":
+{"startdate1":"2013-01-01",
+"enddate1":"2013-01-02",
+"startdate2":"2013-01-01",
+"enddate2":"2013-01-02"
+},
+"checkscript":"select max(dayid) from yourtable",
+"files":
+{
+"1":["/pathtosqlfile/nameofyoursqlfile.txt","update","drop all tables"]
+}
+}
