@@ -1,11 +1,5 @@
 #!/usr/bin/python 
 
-# programming goals# 
-# find way to input dates
-# check on last day in matrix vs last day in my table
-# email if there's an error
-# /home/mark/Documents/ReportAutomation/execengagementautomation.py
-
 import sys
 import os
 import string as s
